@@ -14,20 +14,5 @@
 # limitations under the License.
 #
 
-$(call inherit-product-if-exists, vendor/lge/l01f/l01f-vendor.mk)
-$(call inherit-product, device/lge/g2-common/g2.mk)
-
-## overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	telephony.lteOnGsmDevice=1 \
-	ro.telephony.default_network=9
-
-PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
-
-# default locale
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.locale.language=ja \
-    ro.product.locale.region=JP
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/omni_l01f.mk
