@@ -21,3 +21,10 @@ TARGET_KERNEL_CONFIG := msm8974_l01f_defconfig
 TARGET_OTA_ASSERT_DEVICE := l01f,g2,galbi
 
 G2_DTS_TARGET := msm8974-g2-dcm
+
+#TWRP
+PRODUCT_COPY_FILES += device/lge/l01f/twrp.fstab:recovery/root/etc/twrp.fstab
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+RECOVERY_SDCARD_ON_DATA := true
